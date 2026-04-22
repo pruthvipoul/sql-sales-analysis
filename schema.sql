@@ -18,3 +18,9 @@ select sub_category,sum(sales) as total_sales from super_store group by sub_cate
 
 -- which subcategory generates high sales but low profit?
 select sub_category,sum(sales) as total_sales, sum(profit) as total_profit from super_store group by sub_category order by total_sales desc;
+
+-- profit by region
+SELECT region,SUM(profit) AS total_profit FROM super_store GROUP BY region ORDER BY total_profit DESC;
+
+-- Discount impact on profit
+SELECT discount, SUM(profit) AS total_profit FROM super_store GROUP BY discount ORDER BY discount;
